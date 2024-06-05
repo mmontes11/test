@@ -26,6 +26,8 @@ export BASE_URL=$3
 git clone https://github.com/$REPO.git
 cd $(basename "$REPO")
 git checkout $BRANCH
+git config user.email "martin11lrx@gmail.com"
+git config user.name "Martin Montes"
 
 # Update the index.yaml file using yq
 yq e -i '.entries.mariadb-operator[] |= . * {"urls": [env(BASE_URL) + .version]}' index.yaml
@@ -41,7 +43,3 @@ git push origin $NEW_BRANCH
 gh pr create --title "Update helm index.yaml with new URL" --body "This PR updates the urls field in index.yaml with the new base URL." --base $BRANCH --head $NEW_BRANCH
 
 echo "Pull request created successfully."
-
-# Clean up
-cd ..
-rm -rf $(basename "$REPO")
