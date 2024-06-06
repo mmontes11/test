@@ -2,15 +2,6 @@
 
 set -eo pipefail
 
-install_yq() {
-  if ! command -v yq &> /dev/null; then
-    echo "yq command not found, installing yq..."
-    sudo curl -sSLo /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.13.4/yq_linux_amd64
-    sudo chmod +x /usr/local/bin/yq
-  fi
-}
-install_yq
-
 if [ -z "$BRANCH" ]; then 
   echo "BRANCH environment variable is mandatory"
   exit 1
@@ -23,9 +14,17 @@ if [ -z "$GITHUB_TOKEN" ]; then
   echo "GITHUB_TOKEN environment variable is mandatory"
   exit 1
 fi
-
 export BASE_URL
 export GITHUB_TOKEN
+
+install_yq() {
+  if ! command -v yq &> /dev/null; then
+    echo "yq command not found, installing yq..."
+    sudo curl -sSLo /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.43.1/yq_linux_amd64
+    sudo chmod +x /usr/local/bin/yq
+  fi
+}
+install_yq
 
 echo "Switching to \"$BRANCH\"."
 git fetch --all
