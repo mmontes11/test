@@ -1,84 +1,84 @@
 apiVersion: v1
 entries:
   test:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T13:14:11.57001784Z"
-    description: A Helm chart for Kubernetes
-    digest: d7e7afda59d78c13bce380c1191f7f2c9d1cef5a3b16794aa54ab008787cd04f
-    name: test
-    type: application
-    urls:
-    - https://github.com/mmontes11/test/releases/download/helm-chart-0.8.0/test-0.8.0.tgz
-    version: 0.8.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T13:10:40.547043776Z"
-    description: A Helm chart for Kubernetes
-    digest: beae2f7b37e4ec05cc18d6f2eb64c71560951e8b13f124df5ab17522f48306a7
-    name: test
-    type: application
-    urls:
-    - https://github.com/mmontes11/test/releases/download/helm-chart-0.7.0/test-0.7.0.tgz
-    version: 0.7.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T13:08:38.370082571Z"
-    description: A Helm chart for Kubernetes
-    digest: 56ac44acf8643a3a9effd48a190e67afc0fe1f0a32ab7e8d2d65ab057ad4be14
-    name: test
-    type: application
-    urls:
-    - https://github.com/mmontes11/test/releases/download/helm-chart-0.6.0/test-0.6.0.tgz
-    version: 0.6.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T13:00:20.160656532Z"
-    description: A Helm chart for Kubernetes
-    digest: 7312dd0cbfc84371eb1978dc0299f5b63ea3b9224a72a6c50d41477e1d797be1
-    name: test
-    type: application
-    urls:
-    - https://github.com/mmontes11/test/releases/download/helm-chart-0.5.0/test-0.5.0.tgz
-    version: 0.5.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T12:52:22.501862608Z"
-    description: A Helm chart for Kubernetes
-    digest: 67bcf58fa7e726f617a2a3a880da14111f84d7e6a4f2aa2fcf6054bfd6304586
-    name: test
-    type: application
-    urls:
-    - https://helm.test.io/test/0.4.0
-    version: 0.4.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T11:37:07.011808817Z"
-    description: A Helm chart for Kubernetes
-    digest: 8b775e1b3211b67ba1cde72146fe1f8c4f18ac565b7cedf025d1e8add74867ca
-    name: test
-    type: application
-    urls:
-    - https://helm.test.io/test/0.3.0
-    version: 0.3.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T11:06:58.469285004Z"
-    description: A Helm chart for Kubernetes
-    digest: 97a41af779da4e08acd7ea4b8b95787324559455d70364d5a865aa78be55ec1f
-    name: test
-    type: application
-    urls:
-    - https://helm.test.io/test/0.2.0
-    version: 0.2.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-06T09:36:07.821531215Z"
-    description: A Helm chart for Kubernetes
-    digest: 7563df453fdb4bb5ce33b168c461017a86c991e4511158e7d48d0b4a16f411a6
-    name: test
-    type: application
-    urls:
-    - https://helm.test.io/test/0.1.0
-    version: 0.1.0
-generated: "2024-06-06T13:14:11.570050541Z"
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T13:14:11.57001784Z"
+      description: A Helm chart for Kubernetes
+      digest: d7e7afda59d78c13bce380c1191f7f2c9d1cef5a3b16794aa54ab008787cd04f
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.8.0
+      version: 0.8.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T13:10:40.547043776Z"
+      description: A Helm chart for Kubernetes
+      digest: beae2f7b37e4ec05cc18d6f2eb64c71560951e8b13f124df5ab17522f48306a7
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.7.0
+      version: 0.7.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T13:08:38.370082571Z"
+      description: A Helm chart for Kubernetes
+      digest: 56ac44acf8643a3a9effd48a190e67afc0fe1f0a32ab7e8d2d65ab057ad4be14
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.6.0
+      version: 0.6.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T13:00:20.160656532Z"
+      description: A Helm chart for Kubernetes
+      digest: 7312dd0cbfc84371eb1978dc0299f5b63ea3b9224a72a6c50d41477e1d797be1
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.5.0
+      version: 0.5.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T12:52:22.501862608Z"
+      description: A Helm chart for Kubernetes
+      digest: 67bcf58fa7e726f617a2a3a880da14111f84d7e6a4f2aa2fcf6054bfd6304586
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.4.0
+      version: 0.4.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T11:37:07.011808817Z"
+      description: A Helm chart for Kubernetes
+      digest: 8b775e1b3211b67ba1cde72146fe1f8c4f18ac565b7cedf025d1e8add74867ca
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.3.0
+      version: 0.3.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T11:06:58.469285004Z"
+      description: A Helm chart for Kubernetes
+      digest: 97a41af779da4e08acd7ea4b8b95787324559455d70364d5a865aa78be55ec1f
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.2.0
+      version: 0.2.0
+    - apiVersion: v2
+      appVersion: 1.16.0
+      created: "2024-06-06T09:36:07.821531215Z"
+      description: A Helm chart for Kubernetes
+      digest: 7563df453fdb4bb5ce33b168c461017a86c991e4511158e7d48d0b4a16f411a6
+      name: test
+      type: application
+      urls:
+        - https://helm.test.io/test/0.1.0
+      version: 0.1.0
+generated: "2024-06-06T13:14:39Z"
