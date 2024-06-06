@@ -33,6 +33,8 @@ git checkout $BRANCH
 
 echo "Updating index.yaml."
 yq e -i '.entries.test[] |= . * {"urls": [env(BASE_URL) + .version]}' index.yaml
+CURRENT_TIMESTAMP=$(date --utc +%Y-%m-%dT%H:%M:%SZ)
+yq e -i ".generated = \"$CURRENT_TIMESTAMP\"" index.yaml
 
 NEW_BRANCH="update-index-$(date +%s)"
 echo "Pushing changes to \"$NEW_BRANCH\"."
@@ -45,6 +47,7 @@ echo "Submitting PR."
 gh pr create \
   --title "Update helm index.yaml" \
   --body "This PR has been raised automatically after releasing a new helm chart." \
+  --assignee "@mmontes11" \
   --base $BRANCH \
   --head $NEW_BRANCH
 
