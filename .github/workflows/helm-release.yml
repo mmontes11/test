@@ -9,9 +9,7 @@ jobs:
   index:
     name: Helm index
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: write
+    permissions: write-all
     steps:
       - name: Dispatch helm index workflow
         run: gh workflow run helm-index.yaml --repo mmontes11/test
