@@ -7,6 +7,8 @@ on:
 env:
   HELM_VERSION: "v3.10.2"
 
+permissions: write-all
+
 jobs:
   lint-test:
     runs-on: ubuntu-latest
@@ -49,10 +51,11 @@ jobs:
         run: ct install --config=.github/config/ct.yml
 
   release:
-    permissions: write-all
     runs-on: ubuntu-latest
     needs: lint-test
     if: github.ref == 'refs/heads/main'
+    outputs:
+      changed_charts: ${{ steps.releaser.outputs.changed_charts }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -70,6 +73,7 @@ jobs:
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
+        id: releaser
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_RELEASE_NAME_TEMPLATE: "helm-chart-{{ .Version }}"
@@ -78,6 +82,11 @@ jobs:
           skip_existing: "true"
           pages_branch: "gh-pages"
 
+  index:
+    runs-on: ubuntu-latest
+    needs: release
+    if: ${{ needs.release.outputs.changed_charts != '' }}
+    steps:
       - name: Update index.yaml
         run: ./helm-index.sh
         env:
