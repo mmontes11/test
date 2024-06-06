@@ -14,7 +14,6 @@ fi
 # Check if the correct number of parameters are passed
 if [ "$#" -ne 3 ]; then
     echo "Usage: $0 <repository> <branch> <base_url>"
-    echo "Example: $0 mmontes11/test gh-pages https://helm.mariadb.com/mariadb-operator/"
     exit 1
 fi
 
@@ -30,7 +29,7 @@ git config user.email "martin11lrx@gmail.com"
 git config user.name "Martin Montes"
 
 # Update the index.yaml file using yq
-yq e -i '.entries.mariadb-operator[] |= . * {"urls": [env(BASE_URL) + .version]}' index.yaml
+yq e -i '.entries.test[] |= . * {"urls": [env(BASE_URL) + .version]}' index.yaml
 
 # Commit the changes and push to a new branch
 NEW_BRANCH="update-index-$(date +%s)"
