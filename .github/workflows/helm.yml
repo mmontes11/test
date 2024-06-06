@@ -81,7 +81,6 @@ jobs:
       - name: Update index.yaml
         run: ./helm-index.sh
         env:
-          REPO: mmontes11/test
           BRANCH: gh-pages
           BASE_URL: https://helm.test.io/test/
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
