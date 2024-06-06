@@ -9,9 +9,8 @@ jobs:
   index:
     name: Helm index
     runs-on: ubuntu-latest
-    permissions: write-all
     steps:
       - name: Dispatch helm index workflow
         run: gh workflow run helm-index.yaml --repo mmontes11/test
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.GHA_TOKEN }}"
