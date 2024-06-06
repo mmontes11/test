@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch helm index workflow
-        run: gh workflow run helm-index.yaml --repo mmontes11/test
+        run: gh workflow run helm-index.yml --repo mmontes11/test
         env:
           GITHUB_TOKEN: "${{ secrets.GHA_TOKEN }}"
