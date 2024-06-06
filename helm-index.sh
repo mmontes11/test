@@ -47,7 +47,7 @@ echo "Submitting PR."
 gh pr create \
   --title "Update helm index.yaml" \
   --body "This PR has been raised automatically after releasing a new helm chart." \
-  --assignee "@mmontes11" \
+  --assignee "mmontes11" \
   --base $BRANCH \
   --head $NEW_BRANCH
 
