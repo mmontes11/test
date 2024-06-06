@@ -87,6 +87,17 @@ jobs:
     needs: release
     if: ${{ needs.release.outputs.changed_charts != '' }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
       - name: Update index.yaml
         run: ./helm-index.sh
         env:
