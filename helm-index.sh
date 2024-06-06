@@ -32,6 +32,8 @@ fi
 export BASE_URL
 export GITHUB_TOKEN
 
+git config --global user.email "martin11lrx@gmail.com"
+git config --global user.name "Martin Montes"
 git clone https://github.com/$REPO.git
 cd $(basename "$REPO")
 git checkout $BRANCH
