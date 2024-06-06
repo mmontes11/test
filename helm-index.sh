@@ -11,11 +11,6 @@ install_yq() {
 }
 install_yq
 
-
-if [ -z "$REPO" ]; then 
-  echo "REPO environment variable is mandatory"
-  exit 1
-fi
 if [ -z "$BRANCH" ]; then 
   echo "BRANCH environment variable is mandatory"
   exit 1
@@ -32,24 +27,25 @@ fi
 export BASE_URL
 export GITHUB_TOKEN
 
-git config --global user.email "martin11lrx@gmail.com"
-git config --global user.name "Martin Montes"
-git clone https://github.com/$REPO.git
-cd $(basename "$REPO")
+echo "Switching to \"$BRANCH\"."
+git fetch --all
 git checkout $BRANCH
 
+echo "Updating index.yaml."
 yq e -i '.entries.test[] |= . * {"urls": [env(BASE_URL) + .version]}' index.yaml
 
 NEW_BRANCH="update-index-$(date +%s)"
+echo "Pushing changes to \"$NEW_BRANCH\"."
 git checkout -b $NEW_BRANCH
 git add index.yaml
-git commit -m "Update helm index.yaml with new URL"
+git commit -m "Update index.yaml"
 git push origin $NEW_BRANCH
 
+echo "Submitting PR."
 gh pr create \
   --title "Update helm index.yaml" \
-  --body "This PR has been automatically raised after releasing a new helm chart." \
+  --body "This PR has been raised automatically after releasing a new helm chart." \
   --base $BRANCH \
   --head $NEW_BRANCH
 
-echo "Pull request created successfully."
+echo "Done!"
