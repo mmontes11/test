@@ -1,8 +1,14 @@
 name: Helm
 
 on:
-  push: {}
-  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - "deploy/charts/**"
+  pull_request:
+    paths:
+      - "deploy/charts/**"
 
 env:
   HELM_VERSION: "v3.10.2"
